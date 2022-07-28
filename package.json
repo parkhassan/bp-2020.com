@@ -1,0 +1,44 @@
+{
+  "name": "bp-2020-download",
+  "main": "package.nw/bp-2020/index.html",
+  "version": "1.0.0",
+  "description": "BP 2020",
+  "window": {
+    "width": 1280,
+    "height": 960,
+    "title": "BP 2020",
+    "position": "center",
+    "icon": "bp_icon.png"
+  },
+  "scripts": {
+    "build": "npx webpack && .\\nwjc.exe .\\package.nw\\assets\\bp\\js\\bpoffline.bundle.js bp.bin",
+    "encfile": "node .\\package.nw\\assets\\bp\\js\\bpoffline.module\\lib\\encrypt.x.bpom.js --file index.html --domID app",
+    "decfile": "node .\\package.nw\\assets\\bp\\js\\bpoffline.module\\lib\\decrypt.x.bpom.js --file index.x.html --domID app",
+    "quickstart": ".\\nw.exe",
+    "prestart": "npm run build",
+    "start": ".\\nw.exe",
+    "test": "jest"
+  },
+  "keywords": [
+    "nwjs",
+    "bp",
+    "bpoffline",
+    "bp-2020"
+  ],
+  "author": "TSO",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "fs": "0.0.1-security",
+    "jquery": "^3.4.1",
+    "minimist": "^1.2.0",
+    "spin.js": "^4.0.0",
+    "systeminformation": "^4.14.8"
+  }
+}
